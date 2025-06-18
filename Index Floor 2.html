@@ -1,0 +1,1508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+												
+				function setImageVisible(id, visible,flag,url) 
+				{					
+					var img = document.all(id);
+					
+					for(img1 of img)
+					{ 
+						img1.style.visibility = (visible ? 'visible' : 'hidden');
+					}
+					if(flag==-1){
+						//alert("Close");
+						doCallAjaxClose(url);
+					}else if(flag==1){
+						//alert("open");
+						doCallAjaxOpen(url);	
+						//doCallAjaxOpen(url2);
+					}
+				}
+</script>
+<script language="JavaScript">
+	   var HttPRequest = false;
+
+	   function doCallAjaxOpen(url) {
+		  HttPRequest = false;
+		  if (window.XMLHttpRequest) { // Mozilla, Safari,...
+			 HttPRequest = new XMLHttpRequest();
+			 if (HttPRequest.overrideMimeType) {
+				HttPRequest.overrideMimeType('text/html');
+			 }
+		  } else if (window.ActiveXObject) { // IE
+			 try {
+				HttPRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			 } catch (e) {
+				try {
+				   HttPRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {}
+			 }
+		  } 
+		  
+		  if (!HttPRequest) {
+			 alert('Cannot create XMLHTTP instance');
+			 return false;
+		  }
+	
+			//var url = 'http://192.168.4.30/SetDyNet.cgi?A=2&C=1&L=100';
+
+			// var url = 'get.php?myName='+document.getElementById("txtName").value+'&my2=';  // 2 Parameters
+			HttPRequest.open('GET',url,true);
+			HttPRequest.send(null);
+			
+			
+			HttPRequest.onreadystatechange = function()
+			{
+
+				 if(HttPRequest.readyState == 3)  // Loading Request
+				  {
+				   //document.getElementById("mySpan").innerHTML = "Now is Loading...";
+				  }
+
+				 if(HttPRequest.readyState == 4) // Return Request
+				  {
+				  	//alert("Open SS");
+				   document.getElementById("mySpan").innerHTML = HttPRequest.responseText;
+				  }
+				
+			}
+
+			/*
+			HttPRequest.onreadystatechange = call function .... // Call other function
+			*/
+
+	   }
+	   function doCallAjaxClose(url) {
+		  HttPRequest = false;
+		  if (window.XMLHttpRequest) { // Mozilla, Safari,...
+			 HttPRequest = new XMLHttpRequest();
+			 if (HttPRequest.overrideMimeType) {
+				HttPRequest.overrideMimeType('text/html');
+			 }
+		  } else if (window.ActiveXObject) { // IE
+			 try {
+				HttPRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			 } catch (e) {
+				try {
+				   HttPRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {}
+			 }
+		  } 
+		  
+		  if (!HttPRequest) {
+			 alert('Cannot create XMLHTTP instance');
+			 return false;
+		  }
+	
+			//var url = 'http://192.168.4.30/SetDyNet.cgi?A=2&C=1&L=0';
+
+			// var url = 'get.php?myName='+document.getElementById("txtName").value+'&my2=';  // 2 Parameters
+			HttPRequest.open('GET',url,true);
+			HttPRequest.send(null);
+			
+			
+			HttPRequest.onreadystatechange = function()
+			{
+
+				 if(HttPRequest.readyState == 3)  // Loading Request
+				  {
+				   	//document.getElementById("mySpan").innerHTML = "Now is Loading..."; //??????????????????????????? ??????????? submit URL
+				  }
+
+				 if(HttPRequest.readyState == 4) // Return Request
+				  {
+				  	//alert("Closed SS");
+				   //document.getElementById("mySpan").innerHTML = HttPRequest.responseText; //???????????????????????? ??????????? API 
+				   // HttPRequest.responseText; ?????????????????
+				   //document.getElementById("mySpan").innerHTML ???????????????? ??????? ??????????????????? mySpan
+				  }
+				
+			}
+
+			/*
+			HttPRequest.onreadystatechange = call function .... // Call other function
+			*/
+
+	   }
+</script>		
+		<style>
+/************************************************ A1 ******************************************/
+			div.A20101 {
+				position:absolute; left:261px; top:80px; 
+			}
+			div.A20102 {
+				position:absolute; left:261px; top:138px; 
+			}
+			div.A20103 {
+				position:absolute; left:261px; top:196px;  
+			}
+			div.A20104 {
+				position:absolute; left:261px; top:254px; 
+			}
+			div.A20105 {
+				position:absolute; left:261px; top:312px; 
+			}
+			
+/************************************************ A2 ******************************************/
+			div.A20201 {
+				position:absolute; left:321px; top:80px; 
+			}
+			div.A20202 {
+				position:absolute; left:321px; top:138px; 
+			}
+			div.A20203 {
+				position:absolute; left:321px; top:196px;  
+			}
+			div.A20204 {
+				position:absolute; left:321px; top:254px; 
+			}
+			div.A20205 {
+				position:absolute; left:321px; top:312px; 
+			}
+			div.A20206 {
+				position:absolute; left:375px; top:80px; 
+			}
+			div.A20207 {
+				position:absolute; left:375px; top:138px; 
+			}
+			div.A20208 {
+				position:absolute; left:375px; top:196px;  
+			}
+			div.A20209 {
+				position:absolute; left:375px; top:254px; 
+			}
+			div.A20210 {
+				position:absolute; left:375px; top:312px; 
+			}
+						
+/************************************************ A3 ******************************************/
+			div.A20301 {
+				position:absolute; left:437px; top:80px; 
+			}
+			div.A20302 {
+				position:absolute; left:437px; top:138px; 
+			}
+			div.A20303 {
+				position:absolute; left:437px; top:196px;  
+			}
+			div.A20304 {
+				position:absolute; left:437px; top:254px; 
+			}
+			div.A20305 {
+				position:absolute; left:437px; top:312px; 
+			}
+			div.A20306 {
+				position:absolute; left:491px; top:80px; 
+			}
+			div.A20307 {
+				position:absolute; left:491px; top:138px; 
+			}
+			div.A20308 {
+				position:absolute; left:491px; top:196px;  
+			}
+			div.A20309 {
+				position:absolute; left:491px; top:254px; 
+			}
+			div.A20310 {
+				position:absolute; left:491px; top:312px; 
+			}			
+			
+/************************************************ A4 ******************************************/
+			div.A20401 {
+				position:absolute; left:555px; top:80px; 
+			}
+			div.A20402 {
+				position:absolute; left:555px; top:138px; 
+			}
+			div.A20403 {
+				position:absolute; left:555px; top:196px;  
+			}
+			div.A20404 {
+				position:absolute; left:555px; top:254px; 
+			}
+			div.A20405 {
+				position:absolute; left:555px; top:312px; 
+			}
+			div.A20406 {
+				position:absolute; left:607px; top:80px; 
+			}
+			div.A20407 {
+				position:absolute; left:607px; top:138px; 
+			}
+			div.A20408 {
+				position:absolute; left:607px; top:196px;  
+			}
+			div.A20409 {
+				position:absolute; left:607px; top:254px; 
+			}
+			div.A20410 {
+				position:absolute; left:607px; top:312px; 
+			}
+						
+/************************************************ A5 ******************************************/
+			div.A20502 {
+				position:absolute; left:671px; top:138px; 
+			}
+			div.A20503 {
+				position:absolute; left:671px; top:196px;  
+			}
+			div.A20504 {
+				position:absolute; left:671px; top:254px; 
+			}
+			div.A20505 {
+				position:absolute; left:671px; top:312px; 
+			}
+			div.A20507 {
+				position:absolute; left:723px; top:138px; 
+			}
+			div.A20508 {
+				position:absolute; left:723px; top:196px;  
+			}
+			div.A20509 {
+				position:absolute; left:723px; top:254px; 
+			}
+			div.A20510 {
+				position:absolute; left:723px; top:312px; 
+			}
+	
+/************************************************ A6 ******************************************/
+			div.A20601 {
+				position:absolute; left:97px; top:122px; 
+			}
+			div.A20602 {
+				position:absolute; left:97px; top:164px;  
+			}
+			div.A20603 {
+				position:absolute; left:97px; top:206px; 
+			}
+			div.A20604 {
+				position:absolute; left:97px; top:247px; 
+			}
+			div.A20605 {
+				position:absolute; left:97px; top:289px; 
+			}
+			div.A20606 {
+				position:absolute; left:143px; top:370px;  
+			}
+			div.A20607 {
+				position:absolute; left:203px; top:370px; 
+			}
+			div.A20608 {
+				position:absolute; left:263px; top:370px; 
+			}
+			div.A20609 {
+				position:absolute; left:323px; top:370px; 
+			}
+			div.A20610 {
+				position:absolute; left:381px; top:370px; 
+			}
+			div.A20611 {
+				position:absolute; left:438px; top:370px; 
+			}
+			div.A20612 {
+				position:absolute; left:495px; top:370px; 
+			}
+			div.A20613 {
+				position:absolute; left:550px; top:370px; 
+			}
+			div.A20614 {
+				position:absolute; left:610px; top:370px; 
+			}
+			div.A20615 {
+				position:absolute; left:670px; top:370px; 
+			}
+			div.A20616 {
+				position:absolute; left:730px; top:370px; 
+			}
+			div.A20617 {
+				position:absolute; left:168px; top:428px; 
+			}
+			div.A20618 {
+				position:absolute; left:168px; top:485px; 
+			}
+			div.A20619 {
+				position:absolute; left:168px; top:555px; 
+			}
+			div.A20620 {
+				position:absolute; left:168px; top:612px; 
+			}
+/************************************************ A7 ******************************************/
+			div.A20702 {
+				position:absolute; left:205px; top:428px;  
+			}
+			div.A20703 {
+				position:absolute; left:262px; top:428px; 
+			}
+			div.A20704 {
+				position:absolute; left:319px; top:428px; 
+			}
+			div.A20705 {
+				position:absolute; left:378px; top:428px; 
+			}
+			div.A20706 {
+				position:absolute; left:435px; top:428px;  
+			}
+			div.A20707 {
+				position:absolute; left:495px; top:428px; 
+			}
+			div.A20709 {
+				position:absolute; left:205px; top:485px; 
+			}
+			div.A20710 {
+				position:absolute; left:262px; top:485px; 
+			}
+			div.A20711 {
+				position:absolute; left:319px; top:485px; 
+			}
+			div.A20712 {
+				position:absolute; left:378px; top:485px; 
+			}
+			div.A20713 {
+				position:absolute; left:435px; top:485px; 
+			}
+			div.A20714 {
+				position:absolute; left:495px; top:485px; 
+			}
+			
+			
+/************************************************ A8 ******************************************/
+			div.A20802 {
+				position:absolute; left:205px; top:555px;  
+			}
+			div.A20803 {
+				position:absolute; left:262px; top:555px; 
+			}
+			div.A20804 {
+				position:absolute; left:319px; top:555px; 
+			}
+			div.A20805 {
+				position:absolute; left:378px; top:555px; 
+			}
+			div.A20806 {
+				position:absolute; left:435px; top:555px;  
+			}
+			div.A20807 {
+				position:absolute; left:495px; top:555px; 
+			}
+			div.A20809 {
+				position:absolute; left:205px; top:612px; 
+			}
+			div.A20810 {
+				position:absolute; left:262px; top:612px; 
+			}
+			div.A20811 {
+				position:absolute; left:319px; top:612px; 
+			}
+			div.A20812 {
+				position:absolute; left:378px; top:612px; 
+			}
+			div.A20813 {
+				position:absolute; left:435px; top:612px; 
+			}
+			div.A20814 {
+				position:absolute; left:495px; top:612px; 
+			}
+			
+			
+/************************************************ A9 ******************************************/
+			div.A20901 {
+				position:absolute; left:552px; top:428px; 
+			}
+			div.A20902 {
+				position:absolute; left:609px; top:428px;  
+			}
+			div.A20903 {
+				position:absolute; left:666px; top:428px; 
+			}
+			div.A20904 {
+				position:absolute; left:723px; top:428px; 
+			}
+			div.A20905 {
+				position:absolute; left:552px; top:485px; 
+			}
+			div.A20906 {
+				position:absolute; left:609px; top:485px; 
+			}
+			div.A20907 {
+				position:absolute; left:666px; top:485px; 
+			}
+			div.A20908 {
+				position:absolute; left:723px; top:485px; 
+			}
+			
+/************************************************ A10 ******************************************/
+			div.A21001 {
+				position:absolute; left:552px; top:555px; 
+			}
+			div.A21002 {
+				position:absolute; left:609px; top:555px;  
+			}
+			div.A21003 {
+				position:absolute; left:666px; top:555px; 
+			}
+			div.A21004 {
+				position:absolute; left:723px; top:555px; 
+			}
+			div.A21005 {
+				position:absolute; left:552px; top:612px; 
+			}
+			div.A21006 {
+				position:absolute; left:609px; top:612px; 
+			}
+			div.A21007 {
+				position:absolute; left:666px; top:612px; 
+			}
+			div.A21008 {
+				position:absolute; left:723px; top:612px; 
+			}
+			
+			
+/************************************************ A11 ******************************************/		
+			div.A21101 {
+				position:absolute; left:378px; top:670px; 
+			}
+			div.A21102 {
+				position:absolute; left:435px; top:670px;  
+			}
+			div.A21103 {
+				position:absolute; left:494px; top:670px; 
+			}			
+			div.A21104 {
+				position:absolute; left:550px; top:670px; 
+			}
+			div.A21105 {
+				position:absolute; left:610px; top:670px;  
+			}
+			div.A21106 {
+				position:absolute; left:670px; top:670px; 
+			}
+			div.A21107 {
+				position:absolute; left:378px; top:720px; 
+			}
+			div.A21108 {
+				position:absolute; left:435px; top:720px;  
+			}
+			div.A21109 {
+				position:absolute; left:494px; top:720px; 
+			}			
+			div.A21110 {
+				position:absolute; left:550px; top:720px; 
+			}
+			div.A21111 {
+				position:absolute; left:610px; top:720px;  
+			}
+			div.A21112 {
+				position:absolute; left:670px; top:720px; 
+			}
+			div.A21113 {
+				position:absolute; left:727px; top:720px; 
+			}
+			
+/************************************************ A12 ******************************************/
+			div.A21201 {
+				position:absolute; left:785px; top:105px; 
+			}
+			div.A21202 {
+				position:absolute; left:842px; top:105px;  
+			}
+			div.A21203 {
+				position:absolute; left:900px; top:105px; 
+			}
+			div.A21204 {
+				position:absolute; left:960px; top:105px; 
+			}
+			div.A21205 {
+				position:absolute; left:1018px; top:105px; 
+			}
+			div.A21206 {
+				position:absolute; left:1075px; top:105px;  
+			}
+			div.A21207 {
+				position:absolute; left:1135px; top:105px; 
+			}
+			div.A21208 {
+				position:absolute; left:785px; top:138px; 
+			}
+			div.A21209 {
+				position:absolute; left:842px; top:138px; 
+			}
+			div.A21210 {
+				position:absolute; left:900px; top:138px; 
+			}
+			div.A21211 {
+				position:absolute; left:960px; top:138px; 
+			}
+			div.A21212 {
+				position:absolute; left:1018px; top:138px; 
+			}
+			div.A21213 {
+				position:absolute; left:1075px; top:138px; 
+			}
+			div.A21214 {
+				position:absolute; left:1135px; top:138px; 
+			}
+			
+			
+/************************************************ A13 ******************************************/
+			div.A21301 {
+				position:absolute; left:785px; top:196px; 
+			}
+			div.A21302 {
+				position:absolute; left:842px; top:196px;  
+			}
+			div.A21303 {
+				position:absolute; left:900px; top:196px; 
+			}
+			div.A21304 {
+				position:absolute; left:960px; top:196px; 
+			}
+			div.A21305 {
+				position:absolute; left:1018px; top:196px; 
+			}
+			div.A21306 {
+				position:absolute; left:1075px; top:196px;  
+			}
+			div.A21307 {
+				position:absolute; left:1135px; top:196px; 
+			}
+			div.A21308 {
+				position:absolute; left:785px; top:254px; 
+			}
+			div.A21309 {
+				position:absolute; left:842px; top:254px; 
+			}
+			div.A21310 {
+				position:absolute; left:900px; top:254px; 
+			}
+			div.A21311 {
+				position:absolute; left:960px; top:254px; 
+			}
+			div.A21312 {
+				position:absolute; left:1018px; top:254px; 
+			}
+			div.A21313 {
+				position:absolute; left:1075px; top:254px; 
+			}
+			div.A21314 {
+				position:absolute; left:1135px; top:254px; 
+			}
+
+/************************************************ A14 ******************************************/
+			div.A21401 {
+				position:absolute; left:785px; top:312px; 
+			}
+			div.A21402 {
+				position:absolute; left:842px; top:312px;  
+			}
+			div.A21403 {
+				position:absolute; left:900px; top:312px; 
+			}
+			div.A21404 {
+				position:absolute; left:960px; top:312px; 
+			}
+			div.A21405 {
+				position:absolute; left:1018px; top:312px; 
+			}
+			div.A21406 {
+				position:absolute; left:1075px; top:312px;  
+			}
+			div.A21407 {
+				position:absolute; left:1135px; top:312px; 
+			}
+			div.A21408 {
+				position:absolute; left:785px; top:370px; 
+			}
+			div.A21409 {
+				position:absolute; left:842px; top:370px; 
+			}
+			div.A21410 {
+				position:absolute; left:900px; top:370px; 
+			}
+			div.A21411 {
+				position:absolute; left:960px; top:370px; 
+			}
+			div.A21412 {
+				position:absolute; left:1018px; top:370px; 
+			}
+			div.A21413 {
+				position:absolute; left:1075px; top:370px; 
+			}
+			div.A21414 {
+				position:absolute; left:1135px; top:370px; 
+			}
+			div.A21415 {
+				position:absolute; left:785px; top:428px; 
+			}
+			div.A21416 {
+				position:absolute; left:842px; top:428px; 
+			}
+			div.A21417 {
+				position:absolute; left:900px; top:428px; 
+			}
+			div.A21418 {
+				position:absolute; left:960px; top:428px; 
+			}
+			div.A21419 {
+				position:absolute; left:1018px; top:428px; 
+			}
+			div.A21420 {
+				position:absolute; left:1075px; top:428px; 
+			}
+			div.A21421 {
+				position:absolute; left:1135px; top:428px; 
+			}			
+			
+/************************************************ A15 ******************************************/
+			div.A21501 {
+				position:absolute; left:785px; top:485px; 
+			}
+			div.A21502 {
+				position:absolute; left:842px; top:485px;  
+			}
+			div.A21503 {
+				position:absolute; left:900px; top:485px; 
+			}
+			div.A21504 {
+				position:absolute; left:960px; top:485px; 
+			}
+			div.A21505 {
+				position:absolute; left:1018px; top:485px; 
+			}
+			div.A21506 {
+				position:absolute; left:1075px; top:485px;  
+			}
+			div.A21507 {
+				position:absolute; left:1135px; top:485px; 
+			}
+			div.A21508 {
+				position:absolute; left:785px; top:555px; 
+			}
+			div.A21509 {
+				position:absolute; left:842px; top:555px; 
+			}
+			div.A21510 {
+				position:absolute; left:900px; top:555px; 
+			}
+			div.A21511 {
+				position:absolute; left:960px; top:555px; 
+			}
+			div.A21512 {
+				position:absolute; left:1018px; top:555px; 
+			}
+			div.A21513 {
+				position:absolute; left:1075px; top:555px; 
+			}
+			div.A21514 {
+				position:absolute; left:1135px; top:555px; 
+			}
+
+/************************************************ A16 ******************************************/
+			div.A21601 {
+				position:absolute; left:785px; top:612px; 
+			}
+			div.A21602 {
+				position:absolute; left:842px; top:612px;  
+			}
+			div.A21603 {
+				position:absolute; left:900px; top:612px; 
+			}
+			div.A21604 {
+				position:absolute; left:960px; top:612px; 
+			}
+			div.A21605 {
+				position:absolute; left:1018px; top:612px; 
+			}
+			div.A21606 {
+				position:absolute; left:1075px; top:612px;  
+			}
+			div.A21607 {
+				position:absolute; left:1135px; top:612px; 
+			}
+			div.A21608 {
+				position:absolute; left:785px; top:670px; 
+			}
+			div.A21609 {
+				position:absolute; left:842px; top:670px; 
+			}
+			div.A21610 {
+				position:absolute; left:900px; top:670px; 
+			}
+			div.A21611 {
+				position:absolute; left:960px; top:670px; 
+			}
+			div.A21612 {
+				position:absolute; left:1018px; top:670px; 
+			}
+			div.A21613 {
+				position:absolute; left:1075px; top:670px; 
+			}
+			div.A21614 {
+				position:absolute; left:1135px; top:670px; 
+			}
+			
+			
+		</style>
+</head>
+
+<body>
+<table width="1650" height="700" border="0" cellpadding="1" cellspacing="1">
+  <tr>
+    <td width="1250" height="721" valign="top" background="IMG/Floor 2.jpg">
+	
+	<!--A1 -------------------------------------------------------------------------------------------------------------->
+	<div class="A20101"><img id="RunA1" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20101"><img id="StopA1" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20102"><img id="RunA1" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20102"><img id="StopA1" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20103"><img id="RunA1" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20103"><img id="StopA1" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20104"><img id="RunA1" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20104"><img id="StopA1" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20105"><img id="RunA1" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20105"><img id="StopA1" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	
+		<!--A2 -------------------------------------------------------------------------------------------------------------->
+	<div class="A20201"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20201"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20202"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20202"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20203"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20203"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20204"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20204"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20205"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20205"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20206"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20206"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20207"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20207"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20208"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20208"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20209"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20209"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20210"><img id="RunA2" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20210"><img id="StopA2" src="IMG/Stop.gif" width="30" height="10" /></div>.
+	
+	
+	
+			<!--A3 -------------------------------------------------------------------------------------------------------------->
+	<div class="A20301"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20301"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20302"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20302"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20303"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20303"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20304"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20304"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20305"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20305"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20306"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20306"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20307"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20307"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20308"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20308"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20309"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20309"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20310"><img id="RunA3" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20310"><img id="StopA3" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+			<!--A4 -------------------------------------------------------------------------------------------------------------->
+	<div class="A20401"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20401"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20402"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20402"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20403"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20403"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20404"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20404"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20405"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20405"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20406"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20406"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20407"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20407"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20408"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20408"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20409"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20409"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20410"><img id="RunA4" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20410"><img id="StopA4" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+
+			<!--A5 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A20502"><img id="RunA5" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20502"><img id="StopA5" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20503"><img id="RunA5" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20503"><img id="StopA5" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20504"><img id="RunA5" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20504"><img id="StopA5" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20505"><img id="RunA5" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20505"><img id="StopA5" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20507"><img id="RunA5" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20507"><img id="StopA5" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20508"><img id="RunA5" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20508"><img id="StopA5" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20509"><img id="RunA5" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20509"><img id="StopA5" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20510"><img id="RunA5" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20510"><img id="StopA5" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	
+			<!--A6 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A20601"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20601"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20602"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20602"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20603"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20603"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20604"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20604"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20605"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20605"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20606"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20606"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20607"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20607"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20608"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20608"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20609"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20609"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20610"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20610"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20611"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20611"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20612"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20612"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20613"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20613"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20614"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20614"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20615"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20615"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20616"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20616"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+		
+	<div class="A20617"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20617"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20618"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20618"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20619"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20619"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20620"><img id="RunA6" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20620"><img id="StopA6" src="IMG/Stop.gif" width="30" height="10" /></div>
+			<!--A7 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A20702"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20702"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20703"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20703"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20704"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20704"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20705"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20705"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20706"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20706"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20707"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20707"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20709"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20709"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20710"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20710"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20711"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20711"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20712"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20712"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20713"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20713"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20714"><img id="RunA7" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20714"><img id="StopA7" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+<!--A8 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A20802"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20802"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20803"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20803"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20804"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20804"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20805"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20805"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20806"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20806"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20807"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20807"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20809"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20809"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20810"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20810"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20811"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20811"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20812"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20812"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20813"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20813"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A20814"><img id="RunA8" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20814"><img id="StopA8" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+<!--A9 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A20901"><img id="RunA9" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20901"><img id="StopA9" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20902"><img id="RunA9" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20902"><img id="StopA9" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20903"><img id="RunA9" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20903"><img id="StopA9" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20904"><img id="RunA9" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20904"><img id="StopA9" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20905"><img id="RunA9" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20905"><img id="StopA9" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20906"><img id="RunA9" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20906"><img id="StopA9" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20907"><img id="RunA9" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20907"><img id="StopA9" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A20908"><img id="RunA9" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A20908"><img id="StopA9" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	
+<!--A10 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A21001"><img id="RunA10" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21001"><img id="StopA10" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21002"><img id="RunA10" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21002"><img id="StopA10" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21003"><img id="RunA10" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21003"><img id="StopA10" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21004"><img id="RunA10" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21004"><img id="StopA10" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21005"><img id="RunA10" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21005"><img id="StopA10" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21006"><img id="RunA10" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21006"><img id="StopA10" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21007"><img id="RunA10" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21007"><img id="StopA10" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21008"><img id="RunA10" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21008"><img id="StopA10" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	
+<!--A11 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A21101"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21101"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21102"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21102"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21103"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21103"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21104"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21104"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21105"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21105"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21106"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21106"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21107"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21107"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21108"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21108"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21109"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21109"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21110"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21110"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21111"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21111"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21112"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21112"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21113"><img id="RunA11" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21113"><img id="StopA11" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	
+	<!--A12 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A21201"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21201"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21202"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21202"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21203"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21203"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21204"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21204"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21205"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21205"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21206"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21206"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21207"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21207"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21208"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21208"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21209"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21209"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21210"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21210"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21211"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21211"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21212"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21212"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21213"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21213"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21214"><img id="RunA12" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21214"><img id="StopA12" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<!--A13 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A21301"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21301"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21302"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21302"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21303"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21303"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21304"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21304"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21305"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21305"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21306"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21306"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21307"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21307"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21308"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21308"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21309"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21309"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21310"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21310"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21311"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21311"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21312"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21312"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21313"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21313"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21314"><img id="RunA13" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21314"><img id="StopA13" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	
+<!--A14 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A21401"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21401"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21402"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21402"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21403"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21403"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21404"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21404"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21405"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21405"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21406"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21406"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21407"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21407"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21408"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21408"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21409"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21409"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21410"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21410"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21411"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21411"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21412"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21412"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21413"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21413"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21414"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21414"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+		
+	<div class="A21415"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21415"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21416"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21416"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21417"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21417"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21418"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21418"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21419"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21419"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21420"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21420"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21421"><img id="RunA14" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21421"><img id="StopA14" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+<!--A15 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A21501"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21501"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21502"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21502"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21503"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21503"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21504"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21504"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21505"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21505"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21506"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21506"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21507"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21507"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21508"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21508"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21509"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21509"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21510"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21510"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21511"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21511"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21512"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21512"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21513"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21513"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21514"><img id="RunA15" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21514"><img id="StopA15" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+<!--A16 -------------------------------------------------------------------------------------------------------------->
+	
+	<div class="A21601"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21601"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21602"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21602"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21603"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21603"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21604"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21604"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21605"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21605"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21606"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21606"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21607"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21607"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21608"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21608"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21609"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21609"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21610"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21610"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21611"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21611"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21612"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21612"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	<div class="A21613"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21613"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+
+	<div class="A21614"><img id="RunA16" src="IMG/Run.png" width="30" height="10" /></div>	
+	<div class="A21614"><img id="StopA16" src="IMG/Stop.gif" width="30" height="10" /></div>
+	
+	
+	
+    <td width="376" valign="top"><div align="left">
+      <table width="228" border="0" align="center" cellpadding="10" cellspacing="5">
+          <tr>
+            <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA1', false,1,'http://192.168.4.30/SetDyNet.cgi?A=15&C=1&L=100')">On A1</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA1', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=15&C=1&L=0')">Off A1</button><!--</a>-->  </td>				
+          </tr>
+		  
+            <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA2', false,1,'http://192.168.4.30/SetDyNet.cgi?A=16&C=1&L=100')">On A2</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA2', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=16&C=1&L=0')">Off A2</button><!--</a>-->  </td>				
+			
+          </tr>
+		  
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA3', false,1,'http://192.168.4.30/SetDyNet.cgi?A=17&C=1&L=100')">On A3</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA3', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=17&C=1&L=0')">Off A3</button><!--</a>-->  </td>				
+			
+          </tr>
+		  
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA4', false,1,'http://192.168.4.30/SetDyNet.cgi?A=18&C=1&L=100')">On A4</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA4', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=18&C=1&L=0')">Off A4</button><!--</a>-->  </td>				
+			
+          </tr>
+		  
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA5', false,1,'http://192.168.4.30/SetDyNet.cgi?A=19&C=1&L=100')">On A5</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA5', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=19&C=1&L=0')">Off A5</button><!--</a>-->  </td>				
+			
+          </tr>
+		  
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA6', false,1,'http://192.168.4.30/SetDyNet.cgi?A=20&C=1&L=100')">On A6</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA6', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=20&C=1&L=0')">Off A6</button><!--</a>-->  </td>				
+			
+          </tr>
+
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA7', false,1,'http://192.168.4.30/SetDyNet.cgi?A=21&C=1&L=100')">On A7</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA7', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=21&C=1&L=0')">Off A7</button><!--</a>-->  </td>				
+			
+          </tr>
+		  
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA8', false,1,'http://192.168.4.30/SetDyNet.cgi?A=22&C=1&L=100')">On A8</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA8', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=22&C=1&L=0')">Off A8</button><!--</a>-->  </td>				
+			
+          </tr>		  		  
+
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA9', false,1,'http://192.168.4.30/SetDyNet.cgi?A=23&C=1&L=100')">On A9</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA9', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=23&C=1&L=0')">Off A9</button><!--</a>-->  </td>				
+			
+          </tr>
+
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA10', false,1,'http://192.168.4.30/SetDyNet.cgi?A=24&C=1&L=100')">On A10</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA10', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=24&C=1&L=0')">Off A10</button><!--</a>-->  </td>				
+			
+          </tr>
+		  
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA11', false,1,'http://192.168.4.30/SetDyNet.cgi?A=25&C=1&L=100')">On A11</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA11', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=25&C=1&L=0')">Off A11</button><!--</a>-->  </td>				
+			
+          </tr>
+		  
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA12', false,1,'http://192.168.4.30/SetDyNet.cgi?A=26&C=1&L=100')">On A12</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA12', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=26&C=1&L=0')">Off A12</button><!--</a>-->  </td>				
+			
+          </tr>
+		  
+		    <td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA13', false,1,'http://192.168.4.30/SetDyNet.cgi?A=27&C=1&L=100')">On A13</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA13', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=27&C=1&L=0')">Off A13</button><!--</a>-->  </td>				
+			
+          </tr>
+	  	
+			<td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA14', false,1,'http://192.168.4.30/SetDyNet.cgi?A=28&C=1&L=100')">On A14</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA14', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=28&C=1&L=0')">Off A14</button><!--</a>-->  </td>				
+			
+          </tr>
+			  	
+			<td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA15', false,1,'http://192.168.4.30/SetDyNet.cgi?A=29&C=1&L=100')">On A15</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA15', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=29&C=1&L=0')">Off A15</button><!--</a>-->  </td>				
+			
+          </tr>	
+					 
+			<td width="80" ><!--<a href="#" target="_blank" >-->
+            <button type="button"  onclick="setImageVisible('StopA16', false,1,'http://192.168.4.30/SetDyNet.cgi?A=30&C=1&L=100')">On A16</button><!--</a>--> </td>
+			
+            <td width="93"><!--<a href="#" target="_blank" >-->
+            <button type="button" onclick="setImageVisible('StopA16', true,-1,'http://192.168.4.30/SetDyNet.cgi?A=30&C=1&L=0')">Off A16</button><!--</a>-->  </td>				
+			
+          </tr>	
+        </table>
+      <blockquote>&nbsp;</blockquote>
+    </div></td>
+  </tr>
+</table>
+</body>
+</html>
